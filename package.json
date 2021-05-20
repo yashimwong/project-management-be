@@ -1,0 +1,55 @@
+{
+  "name": "usha-pc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.3.1",
+    "@types/react": "^17.0.6",
+    "@types/react-dom": "^17.0.5",
+    "concurrently": "^6.1.0",
+    "electron": "^12.0.9",
+    "electron-builder": "^22.10.5",
+    "electron-is-dev": "^2.0.0",
+    "electronmon": "^2.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "sass": "^1.32.13",
+    "typescript": "^4.2.4",
+    "wait-on": "^5.3.0"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run react-serve\" \"wait-on http://localhost:3000 && npm run electron-start\"",
+    "build": "npm run react-build && npm run electron-build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "release": "npm run react-build && npm run electron-release",
+    "electron-start": "electronmon .",
+    "electron-build": "electron-builder",
+    "electron-release": "electron-builder --publish=always",
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-serve": "BROWSER=none&&npm run react-start"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "public/electron-main.js",
+  "homepage": "./"
+}
