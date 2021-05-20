@@ -33,7 +33,7 @@
     "electron-release": "electron-builder --publish=always",
     "react-start": "react-scripts start",
     "react-build": "react-scripts build",
-    "react-serve": "BROWSER=none&&npm run react-start"
+    "react-serve": "SET BROWSER=none&&npm run react-start"
   },
   "eslintConfig": {
     "extends": "react-app"
